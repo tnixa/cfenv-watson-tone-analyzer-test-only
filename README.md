@@ -1,5 +1,5 @@
-## Test project for Watson Personality Insights on IBM Cloud using Spring Boot Starter and CFEnv
-Project to test a Watson Natural Personality Insight service instance on IBM Cloud using Spring Boot Starter: https://github.com/watson-developer-cloud/spring-boot-starter. A sample json data file will be analyzed.
+## Test project for Watson Tone Analyzer on IBM Cloud using Spring Boot Starter and CFEnv
+Project to test a Watson Tone Analyzer service instance on IBM Cloud using Spring Boot Starter: https://github.com/watson-developer-cloud/spring-boot-starter. A test text string will be analyzed.
 
 Uses the CFEnv processor to set the properties from the service entry in VCAP_SERVICES.
 - https://github.com/pivotal-cf/java-cfenv
