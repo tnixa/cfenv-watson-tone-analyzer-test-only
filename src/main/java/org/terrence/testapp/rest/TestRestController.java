@@ -3,9 +3,9 @@ package org.terrence.testapp.rest;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-import com.ibm.watson.developer_cloud.tone_analyzer.v3.ToneAnalyzer;
-import com.ibm.watson.developer_cloud.tone_analyzer.v3.model.ToneAnalysis;
-import com.ibm.watson.developer_cloud.tone_analyzer.v3.model.ToneOptions;
+import com.ibm.watson.tone_analyzer.v3.ToneAnalyzer;
+import com.ibm.watson.tone_analyzer.v3.model.ToneAnalysis;
+import com.ibm.watson.tone_analyzer.v3.model.ToneOptions;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,15 +33,15 @@ public class TestRestController {
 
       ToneOptions toneOptions = new ToneOptions.Builder().text(testText).build();
 
-      ToneAnalysis toneAnalysis = toneAnalyzer.tone(toneOptions).execute();
+      ToneAnalysis toneAnalysis = toneAnalyzer.tone(toneOptions).execute().getResult();
       System.out.println(toneAnalysis);
 
       // check to see if query exists in the results
       String expectedKeyword = "Analytical";
       if (toneAnalysis.toString().toLowerCase().contains(expectedKeyword.toLowerCase())) {
-        pw.println("PASS: Personality Insight results contain expected keyword: " + expectedKeyword);
+        pw.println("PASS: Tone Analyzer results contain expected keyword: " + expectedKeyword);
       } else {
-        pw.println("FAIL: Personality Insight results do not contain expected keyword: " + expectedKeyword);
+        pw.println("FAIL: Tone Analyzer results do not contain expected keyword: " + expectedKeyword);
       }
 
     } catch (Exception e) {
