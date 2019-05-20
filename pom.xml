@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.terrence</groupId>
-	<artifactId>testapp</artifactId>
+	<artifactId>cfenv-watson-tone-analyzer-test-only</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>testapp</name>
-	<description>Demo project for Spring Boot</description>
+	<name>cfenv-watson-tone-analyzer-test-only</name>
+	<description>A test app using the CfEnvProcessor Implementation for Watson Tone Analyzer</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -34,16 +34,20 @@
 			<version>1.0.0</version>
 		</dependency>
 		<dependency>
-			<groupId>io.pivotal.cfenv</groupId>
-			<artifactId>java-cfenv-boot</artifactId>
-			<version>1.0.0.RELEASE</version>
-		</dependency>	
+				<groupId>com.github.tnixa</groupId>
+				<artifactId>cfenv-processor-watson-tone-analyzer</artifactId>
+				<version>-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<repositories>
 		<repository>
 			<id>ibm-cloud</id>
 			<url>https://dl.bintray.com/ibm-cloud-sdks/ibm-cloud-sdk-repo</url>
+		</repository>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
 		</repository>
     </repositories>
 
